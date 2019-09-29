@@ -103,7 +103,7 @@ function buildUsersJson(Data){
 
 ///
 
-app.listen(port,host, function () {
+var server=app.listen(port,host, function () {
     var host = server.address().address;
     var port = server.address().port;
     
