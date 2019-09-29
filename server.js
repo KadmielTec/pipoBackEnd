@@ -8,6 +8,7 @@ var urlencodedParser = bodyParser.urlencoded({extended:false});
 var BCRYPT_SALT_ROUNDS=12; 
 var connectionString= "mongodb+srv://Kadm1elPr0d:jhAb5FvITZsf1dti@cluster0-pfli7.azure.mongodb.net/test?retryWrites=true&w=majority";
 var port = process.env.PORT || 8081;
+var host = process.env.HOST || 'localhost'
 
 app.get('/ListCategories', function(req,res)
 {
@@ -98,7 +99,7 @@ function buildUsersJson(Data){
 
 ///
 
-var server = app.listen(port, function () {
+var server = app.listen(port,host, function () {
     var host = server.address().address;
     var port = server.address().port;
     
