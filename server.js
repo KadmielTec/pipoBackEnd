@@ -1,4 +1,6 @@
+'use strict';
 var express = require('express');
+const path = require('path');
 var app= express();
 var bcrypt = require('bcrypt');
 var mongodbClient =require('mongodb').MongoClient;
@@ -9,6 +11,8 @@ var BCRYPT_SALT_ROUNDS=12;
 var connectionString= "mongodb+srv://Kadm1elPr0d:jhAb5FvITZsf1dti@cluster0-pfli7.azure.mongodb.net/test?retryWrites=true&w=majority";
 var port = process.env.PORT || 8081;
 var host = process.env.HOST || 'localhost'
+
+app.use('/', express.static(path.join(__dirname, 'testheroku')));
 
 app.get('/ListCategories', function(req,res)
 {
@@ -99,7 +103,7 @@ function buildUsersJson(Data){
 
 ///
 
-var server = app.listen(port,host, function () {
+app.listen(port,host, function () {
     var host = server.address().address;
     var port = server.address().port;
     
