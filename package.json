@@ -15,7 +15,7 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "dot-env": "0.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.2.7",
     "nodemon": "^1.19.1"
   }
